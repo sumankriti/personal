@@ -24,5 +24,13 @@ public ActorProfile getActorById(int actorId) {
 	return actorDao.getActorById(actorId);
 }
 
+@Transactional(readOnly=false)
+public ActorProfile updateProfile(ActorProfile profile) {
+	// TODO Auto-generated method stub
+	return actorDao.updateProfile(profile);
+}
+
+ 
+
 
 }

@@ -8,5 +8,7 @@ public interface ActorService {
 	
 	public ActorProfile getActorById(int actorId);
 	
+	public ActorProfile updateProfile(ActorProfile profile);
+	
 	
 }

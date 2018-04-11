@@ -1,5 +1,7 @@
 package com.a2zcinema.service;
 
+import java.util.ArrayList;
+
 import com.a2zcinema.model.Users;
 
 public interface UserService {
@@ -10,5 +12,11 @@ public interface UserService {
 	public Users getUserByEmail(String email);
 	
 	public Users getUserById(int id);
+	
+	public Users checkUser(String data);
+	
+	public Object getUserByName(String name);
+	
+	public Users changePassword(Users user);
 
 }

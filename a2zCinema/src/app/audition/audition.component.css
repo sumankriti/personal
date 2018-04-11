@@ -1,0 +1,11 @@
+div.container{
+   margin-left:9.5px;
+   margin-right: 9.5px;
+   max-width: 1330px;
+   padding-left: 15px;
+   padding-right: 15px;
+   width:1330px;
+}
+div.item{
+    background-image: none !important;
+}

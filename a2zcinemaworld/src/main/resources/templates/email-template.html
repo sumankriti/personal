@@ -12,22 +12,24 @@
 
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
         <tr>
-            <td align="center" bgcolor="#78ab46" style="padding: 40px 0 30px 0;">
-               
+            <td align="center" bgcolor="#012b72" style="padding: 40px 0 30px 0;">
+               <h3>A2ZCINEMA</h3>
             </td>
         </tr>
         <tr>
             <td bgcolor="#eaeaea" style="padding: 40px 30px 40px 30px;">
-                <p th:inline="text">Hi Dear [[${name}]] ,</p>
-                <p>Thank you for registering you profile/account with A2ZCW.</p>
+                <p th:inline="text">Hi [[${name}]] ,</p>
+                <p>Thank you for registering your profile/account with A2ZCW.</p>
                 <p th:inline="text"> User ID: Email/Mobile  :      [[${email}]]</p>
                 <p th:inline="text"> Password      :      [[${password}]]</p>
-             <a th:href="${'/localhost:4200/profile/' + {return_page}}">view</a>
-               <a th:href="@{http://www.thymeleaf/documentation.html}">view</a>
+               <p>To activate your account/profile and to confirm your email ID.</p>
+                <p>Please click the following link.</p>
+ <a th:href="@{'http://localhost:4200/updateuser/'+${return_page}}"><p th:inline="text">localhost:4200/updateuser[[${return_page}]]</p></a> 
+              <!--  <a th:href="@{'http://localhost:4200'}"><p th:inline="text">localhost:4200</p></a> -->
                 <p>Thank You.</p>
                 <p>Team A2ZCW</p>
                 <p>www.a2zcinemaworld.com</p>
-                 <!-- <h1 th:inline="text">[[${name}]]</h1> -->
+                
             </td>
         </tr>
     </table>

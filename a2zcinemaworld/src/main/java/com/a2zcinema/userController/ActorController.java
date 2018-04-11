@@ -19,6 +19,7 @@ import com.a2zcinema.model.ActorProfile;
 import com.a2zcinema.model.Users;
 import com.a2zcinema.service.ActorRepository;
 import com.a2zcinema.service.ActorService;
+import com.a2zcinema.service.UserService;
 
 @RestController
 public class ActorController {
@@ -26,6 +27,9 @@ public class ActorController {
 	public ActorRepository actorRepo;
 	@Autowired
 	public ActorService actorService;
+	@Autowired
+	public UserService userService;
+	
 	@GetMapping(value="/getActor")
 	public ResponseEntity<Object> getUser(){
 		Object actor =actorService.getActor();
@@ -53,6 +57,45 @@ public class ActorController {
 			
 			return new ResponseEntity<ActorProfile>(actor,HttpStatus.OK);
 		}
-	
-
+	 @RequestMapping(value = "/updateProfile/{user_id}", method = RequestMethod.POST ,consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	 @ResponseBody
+	 public ResponseEntity<ActorProfile>  updateUser1(@RequestBody ActorProfile actor,@PathVariable("user_id") int user_id) throws IOException {
+	        @SuppressWarnings("unused")
+			String msg="";
+	        System.out.println("data is coming:"+actor.getAboutSelf());
+	        //Users user= new Users();
+	        
+			if(actor!=null){
+				
+				actor.setUser_id(user_id);
+				actorService.updateProfile(actor);
+				msg="User registration Saved Successfully";
+			}
+			
+			return new ResponseEntity<ActorProfile>(actor,HttpStatus.OK);
+		}
+	 @RequestMapping(value = "/updateActor", method = RequestMethod.POST ,consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	 @ResponseBody
+	 public ResponseEntity<ActorProfile>  updateActor(@RequestBody ActorProfile actor) throws IOException {
+	        @SuppressWarnings("unused")
+			String msg="";
+	        System.out.println("datua is coming:"+actor.getAge());
+	        //Users user= new Users();
+	        if(actor!=null)
+	        {	
+				actorRepo.save(actor);
+				msg="User registration Saved Successfully";
+	        }
+	        else if(actor.getActor_back_profile_id()>0)
+	        {
+	        	actor=actorRepo.findOne(actor.getActor_back_profile_id());
+	        	actorRepo.save(actor);
+	        }
+			
+			
+			return new ResponseEntity<ActorProfile>(actor,HttpStatus.OK);
+		}
+	 
+	 
+	 
 }

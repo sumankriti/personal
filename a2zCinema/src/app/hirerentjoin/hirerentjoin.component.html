@@ -1,0 +1,99 @@
+<!-- Main Content-->
+<div class="content">
+    <!-- Section -->
+    <section class="md-section" style="padding-top:200px; padding-bottom: 40px;">
+        <div class="container" style="max-width: 1500px;">
+            <div class="row">
+                <div class="col-lg-12 ">
+                 <div style="text-align:center; color: #fff;font-size: 24px; background-color: #03a9f4;">List of Users</div>
+                </div>
+            </div>
+          
+            <div class="row" style="background-color: #012b72; margin-left:0px; margin-right:0px;">
+                  <form [formGroup]="form" (ngSubmit)="onSubmit()">                      
+                <div class="col-lg-2 " style="padding-right: 10px; padding-left: 10px;">
+                    <input formControlName="user" class="form-control" type="text" placeholder="Search by User Name / UserID"/>
+                </div>
+             
+                
+                <div class="col-lg-2" style="padding-right: 0px; padding-left: 10px;">
+                    <select formControlName="industry" class="form-control">
+                        <option  selected value style="color:orange;">Industry</option>
+                    <option *ngFor="let industry of industry" input type="checkbox">{{industry.name}}</option>
+                      </select>
+                </div>
+               
+                <div class="col-md-2" style="padding-right: 0px; padding-left: 10px;">
+                    <select formControlName="state" class="form-control">
+                        <option  selected value style="color:orange;">State</option>
+                    <option *ngFor="let state of state" input type="checkbox">{{state.name}}</option>
+                      </select>
+                </div>
+               
+                <div class="col-md-2" style="padding-right: 0px; padding-left: 10px;">
+                    <select formControlName="location" class="form-control">
+                        <option  selected value style="color:orange;">Location</option>
+                    <option *ngFor="let location of location" input type="checkbox">{{location.name}}</option>
+                      </select>
+                </div>
+             
+                <div class="col-md-2" style="padding-right: 0px; padding-left: 10px;">
+                    <select formControlName="profession" class="form-control">
+                        <option  selected value style="color:orange;">Profession</option>
+                    <option *ngFor="let profession of profession" input type="checkbox">{{profession.name}}</option>
+                      </select>
+                </div>
+                
+                
+                 
+                <a class="btn btn-primary" style="margin-left:20px;padding: 5px 55px;" (click)="onSubmit()" >Search</a>
+                 </form>
+            </div>
+            <br/>
+            <div class="row" style="width:1285px; height: 650px; overflow: scroll;">
+                <div class="col-sm-6 col-md-6 col-lg-2 " *ngFor="let hire of hireRent">
+                    <div class="textbox textbox__style-02" style="padding: 5px; border: 1px solid #2196F3;">
+                        <div class="textbox__image"><img src="assets\images\news\2.jpeg" style="height: 180px;width: 170px;" alt=""/></div>
+                        <div class="textbox__body" style="padding: 2px 5px;">
+                            <h5 class="" style="color: #03A9F4; margin-top:10px;"><a>{{hire.name}}</a></h5>
+                            <p style="text-align:left;margin-bottom: 1px; ">ID. : {{hire.user_unique_id}}</p>
+                            <p style="text-align:left;margin-bottom: 1px;">Prof : {{hire.profession}}</p>
+                            <p style="text-align:left;margin-bottom: 1px;"><i class="fa fa-arrows-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Age : 25</p>
+                            <p style="text-align:left;margin-bottom: 1px;"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Height : 165 CM</p>
+                            <p style="text-align:left;margin-bottom: 1px;"><i class="fa fa-balance-scale" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Weight : 70 KG</p>
+                            <p style="text-align:left;margin-bottom: 1px;"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Bangalore</p>
+                            <p style="text-align:left;margin-bottom: 1px;"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Karnataka</p>
+                            <a class="btn btn-primary" style="background-color:#3F51B5; border: 1px solid #3F51B5;" href="#">View More</a>
+                        </div>
+                    </div><!-- End / textbox -->
+                </div>
+            </div>	
+        </div>
+    </section>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 ">
+      <div style="text-align:center; color: #fff;font-size: 20px; background-color: #008000;">No More Standing in the Queue for AUDITIONS</div>
+    </div>
+  </div>	
+  <footer class="footer" style="background-color:#012b72">
+    <div class="footer__main" style=" padding: 15px 75px 25px;">
+      <div class="row row-eq-height" style="margin-bottom: -50px;">
+        <div class="col-2 col-sm-4 col-md-4 col-lg-2 ">
+          <div class="footer__item"><a ><img src="assets\images\logo2.png"  style="height:100px;" alt=""/></a></div>
+        </div>
+        <div class="col-sm-8">
+           <p style="color:#c2c2c2">a2zcinemaworld.com is a single window solutions provider for all kinds of filmy needs and is also a Single Online Auditions Platform for Movies, Serials & Modelling Opportunities.</p>
+           <a href="about.html" style="color:#fff">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="about.html" style="color:#fff">Contact Us</a>
+        </div>
+         
+        <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2  consult_backToTop">
+          <div class="footer__item"><a > <i class="fa fa-angle-up" aria-hidden="true"> </i><span >Back To Top</span></a></div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="" style="color:#c2c2c2">2017 &copy; Copyright A2z Cinema Pvt Ltd. All rights Reserved.</div>
+    
+  </footer>

@@ -1,368 +1,197 @@
-<div class="md-content">
-  <!-- Section -->
-  <section class="md-section js-consult-form" style="padding-top:1px; padding-bottom: 40px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
-           
-          <div class="title-01">
-            <h2 class="title-01__title"></h2>
-            <div></div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
-           
-          <div class="title-01">
-            <h2 class="title-01__title"></h2>
-            <div></div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
-           
-          <div class="title-01">
-            <h2 class="title-01__title"></h2>
-            <div></div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
-           
-          <div class="title-01">
-            <h2 class="title-01__title"></h2>
-            <div></div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
-           
-          <div class="title-01">
-            <h2 class="title-01__title"></h2>
-            <div></div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
-           
-          <div class="title-01">
-            <h2 class="title-01__title"></h2>
-            <div></div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
-           
-          <div class="title-01">
-            <h2 class="title-01__title"></h2>
-            <div></div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
-           
-          <div class="title-01">
-            <h2 class="title-01__title"></h2>
-            <div></div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="form-01 consult-form js-consult-form__content" id="form01">
-        <p style="font-size:24px;">Dear, {{userName}}</p>
-        <form class="form-01__form" [formGroup]="form" (ngSubmit)="onSubmit()">
-          <div class="form__item form__item--01">
-            <label>Registering as </label>
-          </div>
-            
-          <div class="form__item form__item--01 dropdown" data-init="dropdown">
-            <!-- <a class="btn1 dropdown__toggle" style="border: 1px solid #9E9E9E; background-color: #fff;">Profession <i class="fa fa-angle-down" aria-hidden="true"></i></a> -->
-            <select formControlName="profession">
-              <option disabled selected value style="color:orange;">Profession</option>
-          <option *ngFor="let profession of profession" input type="checkbox">{{profession.name}}</option>
-            </select>
-          </div>
-           
-          <div class="form__item form__item--02">
-            <input formControlName="otherProfession" type="text" name="name" placeholder="Type other Profession"/>
-          </div>
-          <!-- ================= -->
-          
-         <div class="form__item form__item--11" >
-            <label><span style="font-size:16px;">Gender </span></label> &nbsp;&nbsp;&nbsp;&nbsp;
-           
-            <span *ngFor="let gender of genders">
-              <input formControlName="gender" type="radio"  [value]="gender.name">
-              {{gender.name}}
-            </span>
-             
-          </div> 
-          <div class="form__item form__item--01">
-            &nbsp;
-          </div>
-          <div class="form__item form__item--01">
-            &nbsp;
-          </div>
-          <!-- ================= -->
-          
-          <div class="form__item form__item--01">
-            <label>Date of Birth </label>
-          </div>
-          
-          <div class="form__item form__item--01">
-            <input formControlName="dob" type="text" name="dob" placeholder="DoB"/>
-          </div>
-          <div class="form__item form__item--01">
-            <label>Age</label>
-          </div>
-          <div class="form__item form__item--01">
-            <input formControlName="age" type="text" name="age" placeholder="Age"/>
-          </div>
-          <!-- ================= -->
-          
-          <div class="form__item form__item--01">
-            <label>Height <span style="color:#F44336;">*</span> </label>
-          </div>
-          
-          <div class="form__item form__item--01">
-            <select formControlName="heigth">
-              <option  disabled selected value style="color:orange;">Select Heigth</option>
-          <option *ngFor="let height of height" input type="checkbox">{{height.name}}</option>
-            </select>
-          </div>
-          <div class="form__item form__item--01">
-            <label>Weight <span style="color:#F44336;">*</span></label>
-          </div>
-          <div class="form__item form__item--01">
-            <input formControlName="weight" type="text" name="weight" placeholder="Weight"/>
-          </div>
-          <!-- ================= -->
-          
-          
-          <div class="form__item form__item--01">
-            <label>Mobile Number </label>
-          </div>
-          
-          <div class="form__item form__item--01">
-            <input formControlName="mobile" type="text" name="mobile" placeholder="Mobile Number"/>
-          </div>
-          <div class="form__item form__item--01">
-            <label>Whatsapp Number </label>
-          </div>
-          <div class="form__item form__item--01">
-            <input formControlName="wmobile" type="text" name="wmobile" placeholder="Whatsapp Num"/>
-          </div>
-          <!-- ================= -->								
-          
-          <div class="form__item form__item--01">
-            <label>Qualification </label>
-          </div>
-          
-          <div class="form__item form__item--01">
-            <input formControlName="qualification" type="text" name="qualification" placeholder="Qualification"/>
-          </div>
-          <div class="form__item form__item--01">
-            <label>Films/drama/modeling course </label>
-          </div>
-          <div class="form__item form__item--01">
-            <input formControlName="course" type="text" name="course" placeholder="Films/drama/modeling"/>
-          </div>
-          <!-- ================= -->									
-           <div class="form__item form__item--11">
-            <label><span style="font-size:16px;">Languages : </span></label> &nbsp;&nbsp;&nbsp;&nbsp;
-            <span *ngFor="let choice of checks;">
-                <label>
-                  <input formControlName="language" type="checkbox" [value]="choice.value" (change)="onCheckChange($event)">
-                  {{choice.description}}
-                </label>
-              </span>
-          </div>
+<div style="padding-top:200px;">
+    <div class="row">
+       <span style="margin-left:45%;height: 40px;font-weight: bold;">My Profile</span>
+     </div>
+     <div class="row">
+       <div class="col-lg-6">
+         <div class="container" style="width:500px;heigth:40px;border:1px solid #012b72;background-color:#012b72">
+           <span style="color:white;text-align: center;">Personal Details</span>
+         </div>
+           <div class="container" style="width:500px;border:1px solid #012b72">
+               <table id="reviewer_table" class="table table-hover table-striped table-condensed tasks-table">
+               <thead>
+               </thead>
+               <tbody>
+                   <tr style=" background-color: #dcdcdc;">
+                       <td>Name</td>
+                       <td>{{userData.name}}</td>
+                       
+                       </tr>
+                       
+                       <tr style="background-color: #aaaaaa;">
+                       <td>ID</td>
+                       <td>{{userData.user_unique_id}}</td>
+                      
+                       </tr>
+                       
+                           
+                           <tr style=" background-color: #dcdcdc;">
+                           <td>Gender</td>
+                           <td>{{actorData.gender}}</td>
+                           </tr>
+                           
+                           <tr style="background-color: #aaaaaa;">
+                             <td>Date of Birth</td>
+                             <td>{{actorData.dob}}</td>
+                             </tr>
+                            <tr style="background-color: #dcdcdc;">
+                           <td>Age</td>
+                           <td>{{actorData.age}}</td>
+                           </tr>
+                           
+                            <tr style=" background-color: #aaaaaa;">
+                           <td>Height</td>
+                           <td>{{actorData.height}}</td>
+                           </tr>
+                           
+                            <tr style="background-color: #dcdcdc;">
+                           <td>Weight</td>
+                           <td>{{actorData.weight}}</td>
+                           </tr>
+                           
+                            <tr style="background-color: #aaaaaa;">
+                           <td>Mobile Number</td>
+                           <td>{{userData.mobile}}</td>
+                           </tr>
+                           
+                            <tr style="background-color: #dcdcdc;">
+                           <td>Landline Number</td>
+                           <td>{{actorData.whatsapp}}</td>
+                           </tr>
+                           
+                            <tr style=" background-color: #aaaaaa;">
+                           <td>Whatsapp Number</td>
+                           <td>{{actorData.whatsapp}}</td>
+                           </tr>
+                           
+                            <tr style="background-color: #dcdcdc;">
+                           <td>Email</td>
+                           <td>{{userData.email}}.com</td>
+                           </tr>
+                           
+                            <tr style=" background-color: #aaaaaa;">
+                           <td>Qualification</td>
+                           <td>{{actorData.qualification}}</td>
+                           </tr>
+                           
+                            <tr style="background-color: #dcdcdc;">
+                           <td>Course Done related to film</td>
+                           <td>{{actorData.filmsCourse}}</td>
+                           </tr>
+                           
+                            <tr style="  background-color: #aaaaaa;">
+                           <td>Languages</td>
+                           <td>{{actorData.language}},&nbsp;{{actorData.otherLanguage}}</td>
+                           </tr>
+                           
+                            <tr style="background-color: #dcdcdc;">
+                           <td>Select Profile(public or private)</td>
+                           <td>{{actorData.privacy}}</td>
+                           </tr>
+                           
+                            <tr style=" background-color: #aaaaaa;">
+                           <td>About Me</td>
+                           <td>{{actorData.aboutSelf}}</td>
+                           </tr>
+                           
+                            <tr style="background-color: #dcdcdc;">
+                           <td>Address</td>
+                           <td>{{actorData.address}}</td>
+                           </tr>
+                           
+                            <tr style=" background-color: #aaaaaa;">
+                           <td>Country</td>
+                           <td>{{actorData.country}}</td>
+                           </tr>
+                           
+                            <tr style="background-color: #dcdcdc;">
+                           <td>State</td>
+                           <td>{{actorData.state}}</td>
+                           </tr>
+                           
+                            <tr style="background-color: #aaaaaa;">
+                           <td>City</td>
+                           <td>{{actorData.city}}</td>
+                           </tr>
+                           
+                            <tr style="background-color: #dcdcdc;">
+                           <td>Zipcode / Postalcode</td>
+                           <td>{{actorData.zip}}</td>
+                           </tr>
+                           
+                            <tr style="background-color: #aaaaaa;">
+                           <td>Film Industry Intested in now</td>
+                           <td>SANDALWOOD</td>
+                           </tr>
+               </tbody>
+               </table>
+             </div>
+       </div>
 
-          <div class="form__item form__item--01">
-            <input formControlName="otherlanguage" type="text" name="other" placeholder="Other language"/>
-          </div>
-          <!-- ================= -->
-          
-          <div class="form__item">
-            <label><b>Write about your self</b></label>
-            <textarea formControlName="yself" rows="2" name="yself" placeholder="Write about your self.."></textarea>
-          </div> 
-          
-         <div class="form__item">
-            <label><b>Address</b></label>
-            <textarea formControlName="address" rows="2" name="address" placeholder="Address.."></textarea>
-          </div>
-          
-          
-          <!-- ================= -->
-          
-          <div class="form__item form__item--01">
-            <label>Country</label>
-          </div>
-          
-          <div class="form__item form__item--01">
-            <select formControlName="country">
-              <option  disabled selected value style="color:orange;">Select Country</option>
-          <option *ngFor="let country of country" input type="checkbox">{{country.name}}</option>
-            </select>
-          </div>
-          <div class="form__item form__item--01">
-            <label>State</label>
-          </div>
-          <div class="form__item form__item--01">
-            <select formControlName="state">
-              <option  disabled selected value style="color:orange;">Select State</option>
-          <option *ngFor="let state of state" input type="checkbox">{{state.name}}</option>
-            </select>
-          </div>
-          <!-- ================= -->
-          
-          <div class="form__item form__item--01">
-            <label>City </label>
-          </div>
-          
-          <div class="form__item form__item--01">
-            <select formControlName="city">
-              <option  disabled selected value style="color:orange;">Select city</option>
-          <option *ngFor="let city of city" input type="checkbox">{{city.name}}</option>
-            </select>
-          </div>
-          <div class="form__item form__item--01">
-            <label>Zip / Pin code </label>
-          </div>
-          <div class="form__item form__item--01">
-            <input formControlName="zip" type="text" name="pin" placeholder="Zip / Pin code"/>
-          </div>
-          <!-- ================= -->
-          <div class="form__item form__item--01">
-            <label>Industry interested now </label>
-          </div>
-          
-          <div class="form__item form__item--02">
-            <select formControlName="industry">
-              <option  disabled selected value style="color:orange;">Select Industry</option>
-          <option *ngFor="let interestedIndustry of interestedIndustry" input type="checkbox">{{interestedIndustry.name}}</option>
-            </select>
-          </div>
-          <div class="form__item form__item--01">
-            &nbsp;<br><br><br>
-          </div>
-          
-          <!-- ================= -->
-          <div class="form__item form__item--01">
-            <label>Upload profile image </label>
-          </div>
-          
-          <div class="form__item form__item--02">
-            <input  type="file" id="avatar" (change)="onFileChange($event)" #fileInput />
-          </div>
-          <div class="form__item form__item--01">
-            &nbsp;
-          </div>
-          
-          <div class="form__item form__item--01">
-            <label>Upload gallery images</label>
-          </div>
-          <div class="form__item form__item--02">
-            <input type="file" id="gallery" (change)="onGalleryChange($event)" #galleryInput multiple/>
-          </div>
-          <div class="form__item form__item--01">
-            &nbsp;
-          </div>
-          <!-- ================= -->
-          
-          
-          <div class="form__item form__item--01">
-            <label>Upload vedio urls</label>
-          </div>
-          <div class="form__item form__item--02 addInput">
-            <input formControlName="url" type="url" name="url"/> 
-          </div>
-          <div class="form__item form__item--01">
-            <a class="btn btn-primary" href="#" id="addMore">Add More Url</a>
-          </div>
-          <!-- ================= -->
-          
-          <div class="form__item">
-            <label>If you don't have an URL, please upload videos by <a href="https://www.youtube.com/upload" target="_blank" style="color:#f39c12;">clicking here</a></label>
-          </div>
-          <!-- ================= -->
-          
-           <div class="form__item form__item--11">
-            <label><span style="font-size:16px;">Select your privacy <span style="color:#F44336;">*</span></span></label>
-            <span *ngFor="let privacy of privacy">
-                <input formControlName="privacy" type="radio"  [value]="privacy.name">
-                {{privacy.name}}
-              </span>
-               
-          </div>
-          
-          <div class="privateText form__item">
-            <span style="color:#F44336;">Selection of Private Profile , will not be visible to public !! </span>
-          </div>
-          
-          <!-- ================= -->
-          <div class="form__item">
-            <label><input type="checkbox" id="" value=""><a href="#">Terms and Conditions</a> <span style="color:#F44336;">*</span></label>
-          </div>
-          
-    <div class="form__button"><button class="btn btn-primary">Submit</button></div>
-      
-        </form>
-        
-      </div>
-    </div>
-    
-  </section>
-  
-  
-  <section class="md-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
-          
-          
+       <div class="col-lg-6">
+          <div class="container" style="width:500px;heigth:40px;border:1px solid #012b72;background-color:#012b72">
+              <span style="color:white;text-align: center;">Gallery</span>
+            </div>
+            <div class="container" style="width:500px;border:1px solid #012b72">
+                <div class="row" style="text-align:  center; ">
+										<div class="col-lg-3" >
+											<div class="project-wrapper" style="border: 3px solid #03a9f4;">
+												<div class="project">
+													<div class="photo-wrapper">
+														<div class="photo">
+															<a class="fancybox"><img class="img-responsive" src="assets\images\blogs\detail\4.jpg" style="width: 90px; height:80px"  alt=""></a>
+														</div>
+														<div class="overlay"></div>
+													</div>
+												</div>
+											</div>
+											<span style="color: #F44336; font-size: 20px;"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+										</div>
+										
+										<div class="col-lg-3">
+											<div class="project-wrapper" style="border: 3px solid #03a9f4;">
+												<div class="project">
+													<div class="photo-wrapper">
+														<div class="photo">
+															<a class="fancybox"><img class="img-responsive" src="assets\images\blogs\detail\4.jpg" style="width: 90px; height:80px"  alt=""></a>
+														</div>
+														<div class="overlay"></div>
+													</div>
+												</div>
+											</div>
+											<span style="color: #F44336; font-size: 20px;"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+										</div>
+										
+										<div class="col-lg-3">
+											<div class="project-wrapper" style="border: 3px solid #03a9f4;">
+												<div class="project">
+													<div class="photo-wrapper">
+														<div class="photo">
+															<a class="fancybox"><img class="img-responsive" src="assets\images\blogs\detail\4.jpg" style="width: 90px; height:80px"  alt=""></a>
+														</div>
+														<div class="overlay"></div>
+													</div>
+												</div>
+											</div>
+											<span style="color: #F44336; font-size: 20px;"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+										</div>
+										
+										<div class="col-lg-3">
+											<div class="project-wrapper" style="border: 3px solid #03a9f4;">
+												<div class="project">
+													<div class="photo-wrapper">
+														<div class="photo">
+															<a class="fancybox" ><img class="img-responsive" src="assets\images\blogs\detail\4.jpg" style="width: 90px; height:80px" alt=""></a>
+														</div>
+														<div class="overlay"></div>
+													</div>
+												</div>
+											</div>
+											<span style="color: #F44336; font-size: 20px;"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+										</div>
+									</div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section class="md-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
-          
-          
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section class="md-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 offset-0 offset-sm-0 offset-md-0 offset-lg-3 ">
-          
-          
-        </div>
-      </div>
-    </div>
-  </section>
-  
-        
-</div>
-
-
+       </div>
+     
+     </div>

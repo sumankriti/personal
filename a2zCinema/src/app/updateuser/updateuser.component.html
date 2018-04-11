@@ -1,0 +1,211 @@
+<!-- <home [isLogin]="isLogin"></home> -->
+<div class="md-content">
+    <!-- Section -->
+    <section class="md-section js-consult-form" style="padding-top:180px; padding-bottom: 40px;">
+      <div class="container">
+        <div class="card" style="margin-left:20px;">
+            
+            <div class="container" style="margin-left:10px;margin-top:20px;">
+                <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+             <div class="row">
+              <div class="col-lg-3"><h4>Dear,{{userName |uppercase}}</h4></div>
+               </div>
+             <br/>
+             <div class="row">
+               <div class="col-lg-3">Registering as&nbsp;<span style="color:#F44336;">(Select Profession)</span></div>
+               <div class="col-lg-3">
+                  <select formControlName="profession" [(ngModel)]="subProfession"class="form-control">
+                      <option  selected value style="color:orange;">Profession</option>
+                  <option *ngFor="let profession of profession" input type="checkbox">{{profession.name}}</option>
+                    </select>
+                    <div class="alert alert-danger" *ngIf="form.get('profession').invalid">Please select your profession</div>        
+               </div>
+               <div class="col-lg-2">Other Profession</div>
+               <div class="col-lg-3"><input type="text" formControlName="otherProfession" [(ngModel)]="otherProfession" class="form-control" placeholder="Other profession"></div>
+               </div>
+               <br/>
+               <div class="row">
+                <div class="col-lg-3">Gender</div>
+                
+                <div class="col-lg-3"><span *ngFor="let gender of genders">
+                    <input formControlName="gender" [(ngModel)]="Gender" type="radio"  [value]="gender.name">
+                    {{gender.name}}
+                  </span></div>
+                </div>
+                <br/>
+                <div class="row">
+                  <div class="col-lg-3">Date of Birth</div>
+                  <div class="col-lg-3"> <my-date-picker name="mydate"[options]="myDatePickerOptions"
+                    formControlName="myDate" [(ngModel)]="startDate" (dateChanged)="onDateChanged($event)"></my-date-picker></div>
+                    <div class="col-lg-2">Age</div>
+                    <div class="col-lg-3">
+                      <input type="text" formControlName="age" [(ngModel)]="dateMoment" class="form-control" placeholder="Age">
+                    </div>
+                  </div>
+                  <br/>
+                  <div class="row">
+                    <div class="col-lg-3">Height<span style="color:#F44336;">*</span></div>
+                    <div class="col-lg-3"><select formControlName="heigth" [(ngModel)]="Height" class="form-control">
+                        <option  disabled selected value style="color:orange;">Select Heigth</option>
+                    <option *ngFor="let height of height" input type="checkbox">{{height.name}}</option>
+                      </select></div>
+                      <div class="col-lg-2">Weight<span style="color:#F44336;">*</span></div>
+                      <div class="col-lg-3">
+                          <input type="text" formControlName="weight" [(ngModel)]="Weight" class="form-control" placeholder="weight">
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                      <div class="col-lg-3">Mobile No.</div>
+                      <div class="col-lg-3">
+                        <input type="text" formControlName="mobile" [(ngModel)]="Mobile" class="form-control" placeholder="Mobile Number">
+                      </div>
+                      <div class="col-lg-2">WhatsApp No.</div>
+                      <div class="col-lg-3">
+                        <input type="text" formControlName="wmobile" [(ngModel)]="Whatsapp" class="form-control" placeholder="Whatsapp Number">
+                      </div>
+                      </div>
+                      <br/>
+                      <div class="row">
+                        <div class="col-lg-3">Qualification</div>
+                        <div class="col-lg-3"><input formControlName="qualification"  [(ngModel)]="Qualification" type="text" class="form-control" placeholder="Qualification"></div>
+                        <div class="col-lg-2">Films/drama/modeling course</div>
+                        <div class="col-lg-3">
+                          <input type="text" formControlName="course" [(ngModel)]="Course" class="form-control" placeholder="Courses">
+                        </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                          <div class="col-lg-3">Languages</div>
+                          <div class="col-lg-5">
+                              <span *ngFor="let choice of checks;">
+                                  <label>
+                                    <input formControlName="language"  type="checkbox" [value]="choice.value" (change)="onCheckChange($event)">
+                                    {{choice.description}}
+                                  </label>
+                                </span>
+                          </div>
+                          <div class="col-lg-3">
+                            <input type="text" formControlName="otherlanguage" [(ngModel)]="Otherlanguage" class="form-control" placeholder="Other Language">
+                          </div>
+                          </div>
+                          <br/>
+                          <div class="row"><div class="col-lg-3">Write About Yourself</div></div>
+                          <div class="row">
+                            <div class="col-lg-11">
+                            <textarea formControlName="yself" [(ngModel)]="Yself" class="form-control" rows="5" cols="80" placeholder="About your self"></textarea>
+                            </div>
+                          </div>
+                          <br/>
+                          <div class="row"><div class="col-lg-3">Address</div></div>
+                          <div class="row">
+                            <div class="col-lg-11">
+                            <textarea formControlName="address" [(ngModel)]="Address" class="form-control" rows="5" cols="80" placeholder="Address"></textarea>
+                            </div>
+                          </div>
+                          <br/>
+                          <div class="row">
+                              <div class="col-lg-3">Country</div>
+                              <div class="col-lg-3">
+                                  <select class="form-control" formControlName="country"  [(ngModel)]="Country">
+                                      <option  disabled selected value style="color:orange;">Select Country</option>
+                                  <option *ngFor="let country of country" input type="checkbox">{{country.name}}</option>
+                                    </select>
+                              </div>
+                              <div class="col-lg-2">State</div>
+                              <div class="col-lg-3">
+                                  <select class="form-control" formControlName="state" [(ngModel)]="State">
+                                      <option  disabled selected value style="color:orange;">Select State</option>
+                                  <option *ngFor="let state of state" input type="checkbox">{{state.name}}</option>
+                                    </select>
+                              </div>
+                              </div>
+                              <br/>
+                              <div class="row">
+                                <div class="col-lg-3">Industry interested in</div>
+                                <div class="col-lg-3">
+                                    <select class="form-control" formControlName="industry" [(ngModel)]="Industry">
+                                        <option  disabled selected value style="color:orange;">Select Industry</option>
+                                    <option *ngFor="let interestedIndustry of interestedIndustry" input type="checkbox">{{interestedIndustry.name}}</option>
+                                      </select>
+                                </div>
+                                <div class="col-lg-2">City</div>
+                                <div class="col-lg-3">
+                                    <select formControlName="city" class="form-control" [(ngModel)]="City">
+                                        <option  disabled selected value style="color:orange;">Select city</option>
+                                    <option *ngFor="let city of city" input type="checkbox">{{city.name}}</option>
+                                      </select>
+                                </div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                  <div class="col-lg-3">Upload Profile Imaage</div>
+                                  <div class="col-lg-3">
+                                      <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput class="form-control" />
+                                  </div>
+                                  <div class="col-lg-2">Zip</div>
+                                  <div class="col-lg-3">
+                                    <input formControlName="zip" [(ngModel)]="Zip" type="text" class="form-control" placeholder="Zip">
+                                  </div>
+                                  </div>
+                                  <br/>
+                                  <div class="row">
+                                    <div class="col-lg-3">Upload Gallery Images</div>
+                                    <div class="col-lg-3">
+                                        <input type="file" id="gallery" (change)="onGalleryChange($event)" #galleryInput class="form-control" />
+                                    </div>
+                                    
+                                  </div>
+                                  <br/>
+                                  <div class="row">
+                                    <div class="col-lg-3">Upload Video Urls</div>
+                                    <div class="col-lg-3"><input formControlName="url" type="text" class="form-control"></div>
+                                    <div class="col-lg-3"><button class="btn btn-primary">Add More Video</button></div>
+                                    </div>
+                                    <br/>
+                                    <div class="row">
+                                      <div class="col-lg-7">
+                                      If you don't have an URL, please upload videos by <span style="color:orange">Clicking here</span>
+                                      </div>
+                                    </div>
+                                    <br/>
+                                    <div class="row">
+                                      <div class="col-lg-3">Select your privacy</div>
+                                      <div class="col-lg-5">
+                                          <span style="font-size:16px;">Select your privacy <span style="color:#F44336;">*</span></span>
+                                          <span *ngFor="let privacy of privacy">
+                                              <input type="radio"  formControlName="privacy" [(ngModel)]="Privacy" [value]="privacy.name">
+                                              {{privacy.name}}
+                                            </span>
+                                      </div>
+                                      </div>
+                                      <br/>
+                                      <div class="row">
+                                        <div class="col-lg-3">
+                                            <input type="checkbox" formControlName="terms" value="terms" (change)="onTerms($event)"><a>Terms and Conditions</a> <span style="color:#F44336;">*</span>
+                                        </div>
+                                        </div>
+                                        <div *ngIf="form.get('terms').touched && form.get('terms').invalid">Please select terms and condition</div>
+                                        <br/>
+                                       
+                                        <div class="row">
+                                          <div class="col-lg-3">
+                                              <button class="btn btn-primary" style="margin-left:30px;padding:15px 100px;" [disabled]="!form.valid">Submit</button>
+                                          </div>
+                                          
+                                          </div>
+                                          <br/>
+                                        </form>
+
+                    
+            </div>
+          </div>
+      </div>
+    </section>
+  </div>
+    
+          
+
+  
+  
+  

@@ -1,37 +1,54 @@
+.header{
+    position:fixed;
+    width:100%;
+    z-index:2;
+    background-color: white;
+   
+  } 
 
+  .container-4 button.icon{
+   
+    margin-left:-4px;
+    background-color:#f39c12;
+     padding: 9px 12px;
+     border-radius: 8px;
+  }
+ input.search{
+     border: 1px solid orange;
+ }
 
-.submit
-{
-    cursor:pointer;
-}
-div.modal-content
-{
-    width: 400px !important;
-}
+ /* ul{
+    display: flex;
+ }
+  */
 
-.modal {
+ li{
+   color:white;
+ }
+ .button{
+  border-radius: 8px;
+ }
+ ul.nav.navbar-nav{
+   background-color: #012b72;
+ }
+ input.form-control{
+   height: 48px;
+   
+ }
+ select{
+   height: 48px;;
+ }
+ div.modal-content{
+   width: 350px;
+   align-content: center;
+   margin-left:100px;
+ }
+
+ :host >>> .alert-custom {
+  color: white;
+  background-color: #0c5460;
+  border-color: #0c5460;
 }
-.vertical-alignment-helper {
-    display:table;
-    height: 100%;
-    width: 100%;
-}
-.vertical-align-center {
-    /* To center vertically */
-    display: table-cell;
-    vertical-align: middle;
-}
-.modal-content {
-    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
-    width:inherit;
-    height:inherit;
-    /* To center horizontally */
-    margin: 0 auto;
-}
-div.modal-body{
-    margin-left:-35px !important;
-}
-div.dropdown-menu.show
-{
-    left: 170px !important;
+i.alter::before{
+  font-size: 30px;
 }

@@ -8,6 +8,13 @@ public interface ActorDao {
 	
 	public ActorProfile getActorById(int id);
 	
+	public ActorProfile updateProfile(ActorProfile profile);
+	
+	
+	
+	
+	
+	
 	
 
 }

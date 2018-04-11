@@ -1,5 +1,9 @@
 package com.a2zcinema.model;
 
+
+
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,8 +11,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 @Entity
-@Table(name="actor_backsupport_profile")
+@Table(name="actorprofile")
 public class ActorProfile {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -21,7 +28,7 @@ public class ActorProfile {
 		this.actor_back_profile_id = actor_back_profile_id;
 	}
 	@Column(name="user_id")
-	private int user_id;
+	public int user_id;
 	public int getUser_id() {
 		return user_id;
 	}
@@ -34,8 +41,11 @@ public class ActorProfile {
 	private String otherProfession;
 	@Column(name="gender")
 	private String gender;
+
+	 
+	  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	@Column(name="dob")
-	private String dob;
+	private Date dob;
 	@Column(name="age")
 	private String age;
 	@Column(name="height")
@@ -47,7 +57,7 @@ public class ActorProfile {
 	@Column(name="qualification")
 	private String qualification;
 	@Column(name="films_course")
-	private String filmsCourse;
+	private String films_course;
 	@Column(name="language")
 	private String language;
 	@Column(name="other_language")
@@ -70,8 +80,16 @@ public class ActorProfile {
 	private String user_pic;
 	@Column(name="privacy")
 	private String privacy;
+	@Column(name="filmscourse")
 	
 	
+	
+	public String getFilms_course() {
+		return films_course;
+	}
+	public void setFilms_course(String films_course) {
+		this.films_course = films_course;
+	}
 	public String getSubProfession() {
 		return subProfession;
 	}
@@ -90,10 +108,10 @@ public class ActorProfile {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getDob() {
+	public Date getDob() {
 		return dob;
 	}
-	public void setDob(String dob) {
+	public void setDob(Date dob) {
 		this.dob = dob;
 	}
 	public String getAge() {
@@ -127,10 +145,10 @@ public class ActorProfile {
 		this.qualification = qualification;
 	}
 	public String getFilmsCourse() {
-		return filmsCourse;
+		return films_course;
 	}
-	public void setFilmsCourse(String filmsCourse) {
-		this.filmsCourse = filmsCourse;
+	public void setFilmsCourse(String films_course) {
+		this.films_course = films_course;
 	}
 	public String getLanguage() {
 		return language;
